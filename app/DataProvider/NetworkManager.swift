@@ -3,7 +3,7 @@ import Foundation
 
 @MainActor
 class NetworkManager: ObservableObject {
-    @Published var serverIP: String = "10.1.199.116" // Mac miniのIPアドレス
+    @Published var serverIP: String = "192.168.x.x" // Mac miniのIPアドレスに変更してください
     @Published var isConnected: Bool = false
     @Published var lastError: String?
     

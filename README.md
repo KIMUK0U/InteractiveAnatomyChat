@@ -50,7 +50,7 @@ private let serverBaseURL = "http://<your-mac-mini-ip>:8000"
 
 | Item | Value |
 |------|-------|
-| Server IP | `10.1.199.116` (update to your Mac mini's IP) |
+| Server IP | `192.168.x.x` (your Mac mini's IP address) |
 | Port | `8000` |
 | Timeout | 60 seconds |
 
