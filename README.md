@@ -4,6 +4,30 @@ An end-to-end system that captures hand-tracking and 3D point cloud data from **
 
 ---
 
+## Base Model: PointLLM
+
+This project is built on top of **[PointLLM](https://github.com/OpenRobotLab/PointLLM)**, a large language model that understands 3D point clouds.
+
+> **PointLLM: Empowering Large Language Models to Understand Point Clouds**
+> Runsen Xu, Xiaolong Wang, Tai Wang, Yilun Chen, Jiangmiao Pang, Dahua Lin
+> arXiv: [2308.16911](https://arxiv.org/abs/2308.16911)
+
+PointLLM combines a **PointBERT** point cloud encoder with a **LLaMA 7B** language model via a learned projection layer, enabling natural-language Q&A about 3D objects.
+
+### How This Project Extends PointLLM
+
+| Component | Original PointLLM | This Project |
+|---|---|---|
+| Point Encoder (PointBERT) | Pretrained on ShapeNet | Fine-tuned on dental AR data |
+| Projection Layer | Pretrained | Fine-tuned (Stage 1 & 2) |
+| LLM (LLaMA 7B) | General instruction-following | Fine-tuned for dental anatomy Q&A |
+| Input | Generic 3D objects | Dental point clouds from Apple Vision Pro |
+| Interface | Gradio chat UI | REST API + VisionOS app |
+
+The `server/PointLLM/` and `PointLLMFinetuning/PointLLM/` directories contain modified versions of the PointLLM codebase with custom inference scripts for this application.
+
+---
+
 ## Repository Structure
 
 ```
@@ -366,4 +390,23 @@ The following scripts are retained for reference but are **not part of the main 
 │  - 3D dental model pose  │ ◄────── │  Point Encoder + Projector   │
 │  - Natural language query│  Text   │  + Fine-tuned LLaMA           │
 └─────────────────────────┘         └──────────────────────────────┘
+```
+
+---
+
+## Acknowledgements
+
+This project is based on **PointLLM** by Runsen Xu et al. (OpenRobotLab, Shanghai AI Laboratory).
+
+- **Repository:** https://github.com/OpenRobotLab/PointLLM
+- **Paper:** https://arxiv.org/abs/2308.16911
+- **Base model weights:** [`RunsenXu/PointLLM_7B_v1.2`](https://huggingface.co/RunsenXu/PointLLM_7B_v1.2) on Hugging Face
+
+```bibtex
+@article{xu2023pointllm,
+  title   = {PointLLM: Empowering Large Language Models to Understand Point Clouds},
+  author  = {Xu, Runsen and Wang, Xiaolong and Wang, Tai and Chen, Yilun and Pang, Jiangmiao and Lin, Dahua},
+  journal = {arXiv preprint arXiv:2308.16911},
+  year    = {2023}
+}
 ```
