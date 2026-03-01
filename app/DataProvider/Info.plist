@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>音声入力のためにマイクを使用します</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>質問を入力するために音声認識を使用します</string>
+	<key>NSCameraUsageDescription</key>
+	<string>このアプリは、ARKitを使用して手のトラッキングとデバイスの位置情報を記録します。</string>
+	<key>NSWorldSensingUsageDescription</key>
+	<string>このアプリは、周囲の環境とデバイスの位置をトラッキングしてデータを記録します。</string>
+	<key>NSHandsTrackingUsageDescription</key>
+	<string>このアプリは、手の動きをトラッキングしてデータを記録します。</string>
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UIApplicationPreferredDefaultSceneSessionRole</key>
+		<string>UIWindowSceneSessionRoleApplication</string>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<true/>
+		<key>UISceneConfigurations</key>
+		<dict>
+			<key>UISceneSessionRoleImmersiveSpaceApplication</key>
+			<array>
+				<dict>
+					<key>UISceneInitialImmersionStyle</key>
+					<string>UIImmersionStyleMixed</string>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+</dict>
+</plist>

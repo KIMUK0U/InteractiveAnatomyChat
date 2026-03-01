@@ -1,0 +1,36 @@
+# WebServe - FastAPI Server
+fastapi
+uvicorn
+pydantic
+
+# 科学計算
+numpy
+torch>=2.0
+scipy
+matplotlib
+psutil
+
+# 3Dモデル処理 (Pixar USD SDK)
+# pip install usd-core  または  conda install -c conda-forge usd-core
+# usd-core
+
+# PointLLM依存パッケージ
+accelerate
+einops
+sentencepiece
+tokenizers==0.13.0
+peft
+transformers
+openai
+tqdm
+easydict
+timm==0.4.12
+ftfy==6.0.1
+regex
+h5py
+termcolor
+plyfile
+nltk
+rouge
+scikit-learn
+shortuuid

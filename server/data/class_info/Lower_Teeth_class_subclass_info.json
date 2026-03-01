@@ -1,0 +1,80 @@
+{
+  "total_points": 8192,
+  "classes": {
+    "1": {
+      "name": "Lower_Teeth",
+      "num_points": 8192
+    }
+  },
+  "subclasses": {
+    "0": {
+      "name": "FDI_38_LL8_third_molar",
+      "num_points": 459
+    },
+    "1": {
+      "name": "FDI_48_LR8_third_molar",
+      "num_points": 486
+    },
+    "2": {
+      "name": "FDI_18_UR8_third_molar",
+      "num_points": 1
+    },
+    "3": {
+      "name": "FDI_37_LL7_second_molar",
+      "num_points": 659
+    },
+    "4": {
+      "name": "FDI_47_LR7_second_molar",
+      "num_points": 704
+    },
+    "5": {
+      "name": "FDI_36_LL6_first_molar",
+      "num_points": 809
+    },
+    "6": {
+      "name": "FDI_46_LR6_first_molar",
+      "num_points": 732
+    },
+    "7": {
+      "name": "FDI_35_LL5_second_premolar",
+      "num_points": 457
+    },
+    "8": {
+      "name": "FDI_45_LR5_second_premolar",
+      "num_points": 505
+    },
+    "9": {
+      "name": "FDI_34_LL4_first_premolar",
+      "num_points": 488
+    },
+    "10": {
+      "name": "FDI_44_LR4_first_premolar",
+      "num_points": 476
+    },
+    "11": {
+      "name": "FDI_33_LL3_canine",
+      "num_points": 507
+    },
+    "12": {
+      "name": "FDI_43_LR3_canine",
+      "num_points": 495
+    },
+    "13": {
+      "name": "FDI_32_LL2_lateral_incisor",
+      "num_points": 361
+    },
+    "14": {
+      "name": "FDI_42_LR2_lateral_incisor",
+      "num_points": 329
+    },
+    "15": {
+      "name": "FDI_31_LL1_central_incisor",
+      "num_points": 365
+    },
+    "16": {
+      "name": "FDI_41_LR1_central_incisor",
+      "num_points": 359
+    }
+  },
+  "class_to_subclass": {}
+}

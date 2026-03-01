@@ -1,0 +1,60 @@
+{
+  "total_points": 8192,
+  "classes": {
+    "1": {
+      "name": "Mandible",
+      "num_points": 8192
+    }
+  },
+  "subclasses": {
+    "0": {
+      "name": "Mandible_Right_Anterior_Inferior_Buccal",
+      "num_points": 978
+    },
+    "1": {
+      "name": "Mandible_Right_Anterior_Inferior_Lingual",
+      "num_points": 774
+    },
+    "2": {
+      "name": "Mandible_Right_Posterior_Inferior_Buccal",
+      "num_points": 335
+    },
+    "3": {
+      "name": "Mandible_Right_Posterior_Inferior_Lingual",
+      "num_points": 582
+    },
+    "4": {
+      "name": "Mandible_Right_Posterior_Superior_Buccal",
+      "num_points": 507
+    },
+    "5": {
+      "name": "Mandible_Right_Posterior_Superior_Lingual",
+      "num_points": 969
+    },
+    "6": {
+      "name": "Mandible_Left_Anterior_Inferior_Lingual",
+      "num_points": 706
+    },
+    "7": {
+      "name": "Mandible_Left_Anterior_Inferior_Buccal",
+      "num_points": 841
+    },
+    "8": {
+      "name": "Mandible_Left_Posterior_Inferior_Buccal",
+      "num_points": 326
+    },
+    "9": {
+      "name": "Mandible_Left_Posterior_Inferior_Lingual",
+      "num_points": 600
+    },
+    "10": {
+      "name": "Mandible_Left_Posterior_Superior_Lingual",
+      "num_points": 1026
+    },
+    "11": {
+      "name": "Mandible_Left_Posterior_Superior_Buccal",
+      "num_points": 548
+    }
+  },
+  "class_to_subclass": {}
+}

@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pointllm"
+version = "0.1.2"
+description = "Empower large language models to understand point clouds."
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "accelerate",
+    "einops",
+    "fastapi",
+    "gradio",
+    "markdown2[all]",
+    "numpy",
+    "requests",
+    "sentencepiece",
+    "tokenizers==0.19.1",
+    "uvicorn",
+    "wandb",
+    "shortuuid",
+    "deepspeed",
+    "peft==0.12.0",
+    "transformers==4.44.2",
+    "openai",
+    "tqdm",
+    "easydict",
+    "timm==0.4.12",
+    "ftfy==6.0.1",
+    "regex",
+    "open3d",
+    "h5py",
+    "termcolor",
+    "plyfile",
+    "nltk",
+    "rouge",
+    "scikit-learn",
+    "py-rouge",
+]

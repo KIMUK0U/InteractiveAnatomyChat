@@ -1,0 +1,104 @@
+# =======================
+# モデルウェイト・チェックポイント
+# =======================
+*.bin
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+outputs/
+checkpoints/
+
+# =======================
+# 大容量データファイル（server側）
+# =======================
+server/data/usdz_pc/*.npy
+server/data/usdz_pc/*.usdz
+server/data/results/
+server/data/logs/
+
+# PointLLM内の大容量データ
+server/PointLLM/8192_npy/
+server/PointLLM/*.tar.gz
+server/PointLLM/*.dat
+server/PointLLM/debug_data/
+server/PointLLM/serving_workdirs/
+server/PointLLM/results.xlsx
+server/PointLLM/pointllm/outputs/
+server/PointLLM/pointllm/outputs _v1/
+
+# PointLLM dataフォルダ内の非プログラムファイル
+server/PointLLM/pointllm/data/objaverse_data/
+server/PointLLM/pointllm/data/anno_data/
+server/PointLLM/pointllm/data/npy/
+server/PointLLM/pointllm/data/evaluation_results/
+server/PointLLM/pointllm/data/evaluation_results.zip
+
+# =======================
+# PointLLMFinetuning（非プログラムファイル）
+# =======================
+# 結果・分析ファイル
+PointLLMFinetuning/*.xlsx
+PointLLMFinetuning/PointLLM/*.xlsx
+PointLLMFinetuning/PointLLM/*.csv
+
+# 可視化画像フォルダ
+PointLLMFinetuning/PointLLM/ig_visualizations*/
+PointLLMFinetuning/PointLLM/ig_visualizations-*/
+
+# 一時ファイル（Emacs/LibreOffice）
+PointLLMFinetuning/\#*\#
+PointLLMFinetuning/**/.~lock.*
+.~lock.*
+
+# 学習済みモデル出力
+PointLLMFinetuning/PointLLM/pointllm/outputs/
+
+# =======================
+# Python
+# =======================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# =======================
+# Xcode / Swift（app側）
+# =======================
+app/*.xcuserstate
+app/**/*.xcuserstate
+app/DerivedData/
+app/**/.DS_Store
+app/**/xcuserdata/
+app/**/*.moved-aside
+app/*.hmap
+app/*.ipa
+
+# =======================
+# macOS
+# =======================
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# =======================
+# IDE
+# =======================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =======================
+# 一時ファイル
+# =======================
+*.log
+*.tmp
+debug_data/

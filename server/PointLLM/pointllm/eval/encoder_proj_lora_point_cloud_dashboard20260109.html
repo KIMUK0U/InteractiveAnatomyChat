@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Point Cloud VQA Dashboard</title>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <style>
+        body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; height: 100vh; display: flex; overflow: hidden; }
+        
+        /* 左サイドバー（リスト） */
+        #sidebar {
+            width: 300px;
+            background: #f0f2f5;
+            border-right: 1px solid #ddd;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        .list-header { padding: 15px; background: #fff; border-bottom: 1px solid #ddd; font-weight: bold; }
+        .list-item {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-size: 0.9rem;
+        }
+        .list-item:hover { background: #e6eef5; }
+        .list-item.active { background: #007bff; color: white; }
+        .item-id { font-weight: bold; display: block; margin-bottom: 4px; }
+        .item-preview { font-size: 0.8rem; opacity: 0.8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+        /* メインエリア */
+        #main { flex: 1; display: flex; flex-direction: column; height: 100vh; }
+        
+        /* 3Dビューア */
+        #viewer-container { flex: 3; position: relative; border-bottom: 1px solid #ddd; min-height: 400px; }
+        #plotly-div { width: 100%; height: 100%; }
+        
+        /* テキスト情報エリア */
+        #info-panel { 
+            flex: 2; 
+            padding: 20px; 
+            overflow-y: auto; 
+            background: #fff; 
+            display: flex; 
+            gap: 20px;
+        }
+        .info-col { flex: 1; min-width: 200px; }
+        .info-box { background: #f9f9f9; padding: 15px; border-radius: 6px; border: 1px solid #eee; height: 100%; box-sizing: border-box; }
+        .info-label { font-weight: bold; color: #555; margin-bottom: 8px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .info-text { white-space: pre-wrap; font-size: 0.95rem; line-height: 1.5; color: #333; }
+        
+        .gt-box { border-left: 4px solid #28a745; }
+        .gen-box { border-left: 4px solid #007bff; }
+        
+        /* ローディング表示 */
+        #loading { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 1.2rem; color: #666; display: none; }
+    </style>
+</head>
+<body>
+
+<div id="sidebar">
+    <div class="list-header">Data Samples (0)</div>
+    <div id="list-container"></div>
+</div>
+
+<div id="main">
+    <div id="viewer-container">
+        <div id="plotly-div"></div>
+        <div id="loading">Loading...</div>
+    </div>
+    <div id="info-panel">
+        <div class="info-col">
+            <div class="info-box">
+                <div class="info-label">Question</div>
+                <div class="info-text" id="text-question"></div>
+            </div>
+        </div>
+        <div class="info-col">
+            <div class="info-box gt-box">
+                <div class="info-label">Ground Truth</div>
+                <div class="info-text" id="text-gt"></div>
+            </div>
+        </div>
+        <div class="info-col">
+            <div class="info-box gen-box">
+                <div class="info-label">Generated Output</div>
+                <div class="info-text" id="text-gen"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Pythonから埋め込まれたデータ
+    const allData = [];
+    let currentIndex = -1;
+
+    // 初期化
+    function init() {
+        const listContainer = document.getElementById('list-container');
+        
+        allData.forEach((item, idx) => {
+            const div = document.createElement('div');
+            div.className = 'list-item';
+            div.innerHTML = `<span class="item-id">ID: ${item.id}</span><span class="item-preview">${item.question}</span>`;
+            div.onclick = () => loadItem(idx);
+            div.id = 'item-' + idx;
+            listContainer.appendChild(div);
+        });
+
+        if (allData.length > 0) {
+            loadItem(0);
+        }
+    }
+
+    // アイテムのロードと表示
+    function loadItem(index) {
+        if (currentIndex === index) return;
+        
+        // リストのハイライト更新
+        if (currentIndex !== -1) {
+            document.getElementById('item-' + currentIndex).classList.remove('active');
+        }
+        currentIndex = index;
+        document.getElementById('item-' + currentIndex).classList.add('active');
+
+        const item = allData[index];
+
+        // テキスト更新
+        document.getElementById('text-question').innerText = item.question;
+        document.getElementById('text-gt').innerText = item.ground_truth;
+        document.getElementById('text-gen').innerText = item.generated;
+
+        // 3Dプロット更新
+        renderPlot(item);
+    }
+
+    function renderPlot(item) {
+        const trace = {
+            x: item.pc.x,
+            y: item.pc.y,
+            z: item.pc.z,
+            mode: 'markers',
+            marker: {
+                size: 2,
+                color: item.pc.color,
+                opacity: 0.8
+            },
+            type: 'scatter3d'
+        };
+
+        const layout = {
+            margin: {l: 0, r: 0, b: 0, t: 0},
+            scene: {
+                aspectmode: 'data',
+                xaxis: { title: 'X' },
+                yaxis: { title: 'Y' },
+                zaxis: { title: 'Z' },
+                bgcolor: '#fafafa'
+            }
+        };
+
+        const config = { responsive: true };
+
+        // 新規プロット作成（Reactの方が効率的ですが、シーンのリセット等のためにnewPlotを使用）
+        Plotly.newPlot('plotly-div', [trace], layout, config);
+    }
+
+    // 実行開始
+    init();
+
+</script>
+</body>
+</html>
+    

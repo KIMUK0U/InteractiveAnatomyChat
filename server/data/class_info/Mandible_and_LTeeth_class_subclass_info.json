@@ -1,0 +1,132 @@
+{
+  "total_points": 8192,
+  "classes": {
+    "1": {
+      "name": "Lower_Teeth",
+      "num_points": 4096
+    },
+    "2": {
+      "name": "Mandible",
+      "num_points": 4096
+    }
+  },
+  "subclasses": {
+    "0": {
+      "name": "FDI_38_LL8_third_molar",
+      "num_points": 248
+    },
+    "1": {
+      "name": "FDI_48_LR8_third_molar",
+      "num_points": 288
+    },
+    "2": {
+      "name": "FDI_18_UR8_third_molar",
+      "num_points": 1
+    },
+    "3": {
+      "name": "FDI_37_LL7_second_molar",
+      "num_points": 298
+    },
+    "4": {
+      "name": "FDI_47_LR7_second_molar",
+      "num_points": 366
+    },
+    "5": {
+      "name": "FDI_36_LL6_first_molar",
+      "num_points": 395
+    },
+    "6": {
+      "name": "FDI_46_LR6_first_molar",
+      "num_points": 365
+    },
+    "7": {
+      "name": "FDI_35_LL5_second_premolar",
+      "num_points": 195
+    },
+    "8": {
+      "name": "FDI_45_LR5_second_premolar",
+      "num_points": 234
+    },
+    "9": {
+      "name": "FDI_34_LL4_first_premolar",
+      "num_points": 253
+    },
+    "10": {
+      "name": "FDI_44_LR4_first_premolar",
+      "num_points": 230
+    },
+    "11": {
+      "name": "FDI_33_LL3_canine",
+      "num_points": 271
+    },
+    "12": {
+      "name": "FDI_43_LR3_canine",
+      "num_points": 243
+    },
+    "13": {
+      "name": "FDI_32_LL2_lateral_incisor",
+      "num_points": 179
+    },
+    "14": {
+      "name": "FDI_42_LR2_lateral_incisor",
+      "num_points": 154
+    },
+    "15": {
+      "name": "FDI_31_LL1_central_incisor",
+      "num_points": 203
+    },
+    "16": {
+      "name": "FDI_41_LR1_central_incisor",
+      "num_points": 173
+    },
+    "17": {
+      "name": "Mandible_Right_Anterior_Inferior_Lingual",
+      "num_points": 404
+    },
+    "18": {
+      "name": "Mandible_Right_Anterior_Inferior_Buccal",
+      "num_points": 476
+    },
+    "19": {
+      "name": "Mandible_Right_Posterior_Inferior_Buccal",
+      "num_points": 208
+    },
+    "20": {
+      "name": "Mandible_Right_Posterior_Inferior_Lingual",
+      "num_points": 261
+    },
+    "21": {
+      "name": "Mandible_Right_Posterior_Superior_Buccal",
+      "num_points": 241
+    },
+    "22": {
+      "name": "Mandible_Right_Posterior_Superior_Lingual",
+      "num_points": 498
+    },
+    "23": {
+      "name": "Mandible_Left_Anterior_Inferior_Lingual",
+      "num_points": 368
+    },
+    "24": {
+      "name": "Mandible_Left_Anterior_Inferior_Buccal",
+      "num_points": 455
+    },
+    "25": {
+      "name": "Mandible_Left_Posterior_Inferior_Lingual",
+      "num_points": 321
+    },
+    "26": {
+      "name": "Mandible_Left_Posterior_Inferior_Buccal",
+      "num_points": 161
+    },
+    "27": {
+      "name": "Mandible_Left_Posterior_Superior_Buccal",
+      "num_points": 225
+    },
+    "28": {
+      "name": "Mandible_Left_Posterior_Superior_Lingual",
+      "num_points": 478
+    }
+  },
+  "class_to_subclass": {}
+}

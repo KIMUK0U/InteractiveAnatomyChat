@@ -1,0 +1,19 @@
+# Core dependencies
+torch>=1.13.0
+transformers>=4.31.0
+numpy>=1.21.0
+pandas>=1.3.0
+matplotlib>=3.3.0
+Pillow>=8.0.0
+
+# Excel handling
+openpyxl>=3.0.0
+xlsxwriter>=3.0.0
+
+# Point cloud visualization
+plotly>=5.0.0  # Optional: for interactive 3D visualizations
+
+# Additional utilities
+tqdm>=4.60.0
+scipy>=1.7.0
+scikit-learn>=1.0.0

@@ -1,0 +1,128 @@
+{
+  "total_points": 8192,
+  "classes": {
+    "1": {
+      "name": "Maxilla_and_Upper_Skull",
+      "num_points": 4096
+    },
+    "2": {
+      "name": "Upper_Teeth",
+      "num_points": 4096
+    }
+  },
+  "subclasses": {
+    "0": {
+      "name": "Maxilla_and_Upper_Skull_RPosteriorSuperior",
+      "num_points": 512
+    },
+    "1": {
+      "name": "Maxilla_and_Upper_Skull_LPosteriorSuperior",
+      "num_points": 490
+    },
+    "2": {
+      "name": "Maxilla_and_Upper_Skull_RAnteriorSuperior",
+      "num_points": 468
+    },
+    "3": {
+      "name": "Maxilla_and_Upper_Skull_LAnteriorSuperior",
+      "num_points": 446
+    },
+    "4": {
+      "name": "Maxilla_and_Upper_Skull_RPosteriorInferior",
+      "num_points": 470
+    },
+    "5": {
+      "name": "Maxilla_and_Upper_Skull_LPosteriorInferior",
+      "num_points": 449
+    },
+    "6": {
+      "name": "Maxilla_and_Upper_Skull_RAnteriorInferior",
+      "num_points": 697
+    },
+    "7": {
+      "name": "Maxilla_and_Upper_Skull_LAnteriorInferior",
+      "num_points": 564
+    },
+    "8": {
+      "name": "FDI_48_LR8_third_molar",
+      "num_points": 2
+    },
+    "9": {
+      "name": "FDI_28_UL8_third_molar",
+      "num_points": 221
+    },
+    "10": {
+      "name": "FDI_18_UR8_third_molar",
+      "num_points": 258
+    },
+    "11": {
+      "name": "FDI_27_UL7_second_molar",
+      "num_points": 294
+    },
+    "12": {
+      "name": "FDI_17_UR7_second_molar",
+      "num_points": 290
+    },
+    "13": {
+      "name": "FDI_37_LL7_second_molar",
+      "num_points": 4
+    },
+    "14": {
+      "name": "FDI_47_LR7_second_molar",
+      "num_points": 5
+    },
+    "15": {
+      "name": "FDI_26_UL6_first_molar",
+      "num_points": 363
+    },
+    "16": {
+      "name": "FDI_16_UR6_first_molar",
+      "num_points": 338
+    },
+    "17": {
+      "name": "FDI_25_UL5_second_premolar",
+      "num_points": 227
+    },
+    "18": {
+      "name": "FDI_15_UR5_second_premolar",
+      "num_points": 226
+    },
+    "19": {
+      "name": "FDI_24_UL4_first_premolar",
+      "num_points": 253
+    },
+    "20": {
+      "name": "FDI_14_UR4_first_premolar",
+      "num_points": 206
+    },
+    "21": {
+      "name": "FDI_23_UL3_canine",
+      "num_points": 254
+    },
+    "22": {
+      "name": "FDI_13_UR3_canine",
+      "num_points": 265
+    },
+    "23": {
+      "name": "FDI_33_LL3_canine",
+      "num_points": 5
+    },
+    "24": {
+      "name": "FDI_22_UL2_lateral_incisor",
+      "num_points": 192
+    },
+    "25": {
+      "name": "FDI_12_UR2_lateral_incisor",
+      "num_points": 199
+    },
+    "26": {
+      "name": "FDI_21_UL1_central_incisor",
+      "num_points": 250
+    },
+    "27": {
+      "name": "FDI_11_UR1_central_incisor",
+      "num_points": 244
+    }
+  },
+  "class_to_subclass": {}
+}

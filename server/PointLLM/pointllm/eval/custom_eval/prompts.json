@@ -1,0 +1,30 @@
+{
+  "prompts": {
+    "Prompt_A": {
+      "definition": "Describe this point cloud object.",
+      "full_prompt": "You are an AI assistant specialized in analyzing 3D point cloud data. Your task is to provide detailed and accurate descriptions of 3D objects based on their point cloud representations. Please analyze the given point cloud and describe what object it represents, including its shape, structure, and any distinctive features you can identify.\n\nDescribe this point cloud object."
+    },
+    "Prompt_B": {
+      "definition": "What are the main geometric features of this object?",
+      "full_prompt": "You are an expert in 3D geometry and shape analysis. Examine the point cloud data carefully and identify the primary geometric characteristics of this object.\n\nWhat are the main geometric features of this object? Consider aspects such as:\n- Overall shape and form\n- Symmetry or asymmetry\n- Curved vs angular surfaces\n- Proportions and dimensions\n- Any distinctive geometric patterns"
+    },
+    "Prompt_C": {
+      "definition": "What is the likely function or purpose of this object?",
+      "full_prompt": "As an AI assistant with expertise in object recognition and functional analysis, please examine this 3D point cloud and infer the object's purpose.\n\nWhat is the likely function or purpose of this object? Consider:\n- Its shape and design\n- Potential use cases\n- Category or class it belongs to\n- How it might be used in daily life or specific contexts"
+    },
+    "Prompt_D": {
+      "definition": "Identify the object category and provide confidence level.",
+      "full_prompt": "You are a 3D object classification expert. Analyze this point cloud and categorize the object.\n\nIdentify the object category and provide your confidence level. Please:\n1. State what type of object this is\n2. Provide your confidence level (high/medium/low)\n3. Mention any ambiguities or alternative interpretations\n4. List similar objects it could be confused with"
+    },
+    "Prompt_E": {
+      "definition": "Describe the color or material properties visible in this point cloud.",
+      "full_prompt": "You are analyzing a colored point cloud with RGB information. Focus on the visual appearance and potential material properties.\n\nDescribe the color or material properties visible in this point cloud. Consider:\n- Color distribution and patterns\n- Potential material types (metal, plastic, wood, fabric, etc.)\n- Surface texture indications\n- Any color-based segmentation or parts\n- Visual characteristics that suggest specific materials"
+    }
+  },
+  "metadata": {
+    "version": "1.0",
+    "description": "Prompt templates for PointLLM evaluation on custom objects",
+    "created": "2025-11-16",
+    "notes": "Each prompt includes both a short definition for the table header and a full prompt with context for the actual inference"
+  }
+}
